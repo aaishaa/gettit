@@ -1,8 +1,8 @@
+require 'pry'
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'json'
-require 'pry'
+require 'pg'
 
 require_relative 'server'
 
-run Products::Server
+run Forum::Server

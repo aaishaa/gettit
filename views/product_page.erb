@@ -1,0 +1,26 @@
+<% p = @product %>
+<div class="product-page">
+  <div class="prod-header">
+    <h1><%= p["name"] %></h1>
+    <h3>by <strong><%= p["brand"]%></strong></h3>
+  </div>
+  <div class="prod-body">
+    <p>
+      <%= p["description"]%>
+    </p>
+  </div>
+  <div class="prod-footer"></div>
+</div>
+
+<div class="comments">
+  <form action="/products/<%= p["id"] %>" method="post" accept-charset="utf-8">
+    <div class="input comment">
+      <label for="label">Label:</label>
+      <input type="text" name="label" id="label">
+    </div> 
+    <div class="input comment">
+    <label for="comment">Comment</label>
+    <textarea type="text" name="comment" id="comment"></textarea>
+  </div>
+  </form>
+</div>

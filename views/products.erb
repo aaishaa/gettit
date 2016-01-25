@@ -1,15 +1,19 @@
-<h1>Product Reviews</h1>
-<% if @success %>
-  <h3><%= @success %></h3>
-<% end %>
-<% if @login_success %>
-  <h3><%= @login_success %></h3>
-<% end %>
+
 <table>
+  <caption><h1>Product Reviews</h1></caption>
+  <% if @success %>
+    <caption>
+      <h3><%= @success %></h3>
+    </caption>
+  <% end %>
+  <% if @login_success %>
+    <caption>
+      <h3><%= @login_success %></h3>
+    </caption>
+  <% end %>
   <thead>
     <tr>
-      <th>id</th>
-      <th>Votes</th>
+      <th class="order">Votes</th>
       <th>Brand</th>
       <th>Product Name</th>
       <th>Category</th>
@@ -17,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <% prod_list.each do |product| %>
+    <% prods_w_cats.each do |product| %>
       <tr data-product-id="<%= product['id'] %>">
         <!-- <td><%= product['id'] %></td> -->
         <td class="votes" data-href="/products/<%= product['id'] %>">

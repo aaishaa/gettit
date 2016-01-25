@@ -1,16 +1,19 @@
 <form action="/signup" method="post" accept-charset="utf-8">
-  <div class="input login">
+  <div class="input signup">
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email">
+  </div>
+  <div class="input signup">
     <label for="username">Name:</label>
     <input type="text" name="username" id="username">
   </div>
 
-  <div class="input login">
+  <div class="input signup">
     <label for="password">Password</label>
     <input type="password" name="password" id="password">
   </div>
   
-  <div class="input login">
+  <div class="input signup">
     <input type="submit" name="submit" value="submit" />
-    <input type="submit" name="signup" value="signup" formaction="/signup" />
   </div>
 </form>

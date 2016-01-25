@@ -1,25 +1,26 @@
-<h1><%= @product["name"] %> by <%= @product["brand"]%></h1>
-<table>
-  <thead>
-    <tr>
-      <th>Votes</th>
-      <th>Brand</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Post Date</th>
-      <th>post id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%=@product["votes"]%></td>
-      <td><%=@product["brand"]%></td>
-      <td><%=@product["name"]%></td>
-      <td><%=@product["title"] %></td>
-      <td><%=@product["ptime"]%></td>
-      <td><%=@product["id"] %></td>
-    </tr>
-  </tbody>
-</table>
-<h3>Description:</h3>
-<p><%= @product["dscrp"] %></p>
+<form action="/products" method="post" accept-charset="utf-8">
+  <div class="input product">
+    <label for="brand">Name:</label>
+    <input type="text" name="brand" id="brand">
+  </div>
+  <div class="input product">
+    <label for="name">Product Name</label>
+    <input type="text" name="name" id="name"/>
+  </div>
+  <div class="input product">
+    <label for="topic_id">Product Category</label>
+    <select name="topic_id" id="topic_id">
+      <% cat_list.each do |topic| %>
+        <%# pid = @products['topic_id'] %>
+        <option value="<%= topic["id"] %>"><%= topic["title"] %></option>
+      <%end%>    
+    </select>
+  </div>
+  <div class="input product">
+    <label for="description">Description</label>
+    <textarea type="text" name="description" id="dscrp"></textarea>
+  </div>
+  <div class="input buttons product">
+    <input type="submit" name="submit" value="submit" />
+  </div>
+</form>

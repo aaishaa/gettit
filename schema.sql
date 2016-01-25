@@ -7,7 +7,7 @@ CREATE TABLE users(
   id              SERIAL PRIMARY KEY,
   email           VARCHAR UNIQUE NOT NULL,
   password_digest VARCHAR NOT NULL,
-  username            VARCHAR NOT NULL
+  username        VARCHAR NOT NULL
 );
 
 CREATE TABLE topics(
@@ -16,16 +16,21 @@ CREATE TABLE topics(
 );
 
 CREATE TABLE products(
-  id          SERIAL PRIMARY KEY,
-  topic_id    INTEGER REFERENCES topics(id),
-  brand       VARCHAR,
-  name        VARCHAR NOT NULL,
-  dscrp       TEXT,
-  votes       INTEGER,
-  ptime       DATE
+  id            SERIAL PRIMARY KEY,
+  topic_id      INTEGER REFERENCES topics(id),
+  brand         VARCHAR,
+  name          VARCHAR NOT NULL,
+  description   TEXT,
+  votes         INTEGER,
+  ptime         DATE
 );
 
-
+CREATE TABLE comments(
+  id           SERIAL PRIMARY KEY,
+  comment_id   INTEGER REFERENCES products(id),
+  from_user    INTEGER,
+  pdate        DATE
+);
 
 INSERT INTO topics
   (title)
@@ -36,7 +41,7 @@ VALUES
   ('Nails');
 
 INSERT INTO products
-  (topic_id, brand, name, dscrp, votes, ptime)
+  (topic_id, brand, name, description, votes, ptime)
 VALUES
   (2, 'It''s a 10', 'Miracle Styling Serum', 'This stuff is so good!', 8, CURRENT_DATE),
   (1, 'Cetaphil', 'Moisturizing Cream', 'So gentle!', 0, CURRENT_DATE),
