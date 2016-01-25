@@ -1,0 +1,31 @@
+<h1>All Products</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Votes</th>
+      <th>Brand</th>
+      <th>Name</th>
+      <!-- <th>Description</th> -->
+      <th>Category</th>
+      <th>Post Date</th>
+      <!-- <th>post id</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @products_t.each do |product| %>
+      <tr data-product-id="<%= product['id'] %>">
+        <td class="votes" data-href="/products/<%= product['id'] %>">
+          <div class="upvote"><a href="/upvote/<%= product['id'] %>">&#11014;</a></div>
+          <div><%= product['votes']%></div>
+          <div class="downvote"><a href="/downvote/<%= product['id'] %>">&#11015;</a></div>
+        </td>
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['brand']%></td>
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['name']%></td>
+        <!-- <td><%= product['dscrp']%></td> -->
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['title'] %></td>
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['ptime']%></td>
+       <!--  <td><%= product['id'] %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

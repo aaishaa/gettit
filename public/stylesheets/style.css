@@ -1,0 +1,193 @@
+/** Sara's Style Sheet **/
+
+/* Fonts */
+@font-face {
+    font-family: 'Circular';
+    src: url('../fonts/circularstd-book-webfont.eot');
+    src: url('../fonts/circularstd-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/circularstd-book-webfont.woff2') format('woff2'),
+         url('../fonts/circularstd-book-webfont.woff') format('woff'),
+         url('../fonts/circularstd-book-webfont.ttf') format('truetype'),
+         url('../fonts/circularstd-book-webfont.svg#circularstd-bookbook') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Circular';
+    src: url('../fonts/circularstd-medium-webfont.eot');
+    src: url('../fonts/circularstd-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/circularstd-medium-webfont.woff2') format('woff2'),
+         url('../fonts/circularstd-medium-webfont.woff') format('woff'),
+         url('../fonts/circularstd-medium-webfont.ttf') format('truetype'),
+         url('../fonts/circularstd-medium-webfont.svg#circularstd-mediummedium') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Circular';
+    src: url('../fonts/circularstd-bold-webfont.eot');
+    src: url('../fonts/circularstd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/circularstd-bold-webfont.woff2') format('woff2'),
+         url('../fonts/circularstd-bold-webfont.woff') format('woff'),
+         url('../fonts/circularstd-bold-webfont.ttf') format('truetype'),
+         url('../fonts/circularstd-bold-webfont.svg#circularstd-boldbold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+* {
+    font-family: Circular, Verdana, Arial, sans-serif;
+    font-weight: 400;
+}
+
+
+/* Page Elements */
+body {
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+    font-weight: 600;
+    background: url('images/roses.jpg');
+    border: 20px solid;
+    border-bottom: none;
+    background-size: cover;
+    padding: 40px 40px 0 40px;
+}
+header h3{
+    padding: 20px;
+    margin:0 auto;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    text-align: center
+}
+
+
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+p {
+    font-size: 19px;
+    line-height: 25px;
+}
+
+
+
+/* Product Table*/
+
+table{
+    position: relative;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,0);
+    padding-bottom: 75px;
+    border-collapse: collapse;
+    font-size: 1.25rem
+}
+
+th, td{padding: 1.5rem}
+
+tr:nth-child(even){background-color: #efefef}
+
+th{
+    background: black;
+    font-size: 1.5rem; 
+    color: white;
+}
+tr:hover{
+background: yellow;
+}
+td.votes{
+    width: 0;
+    word-wrap: break-word;
+    padding: 0;
+}
+td.votes div{
+    display: block;
+}
+.about p {
+    padding-top: 10px;}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li{
+    color: #442F2F;
+    text-align: center;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 600;
+    padding: 9px 16px 6px 16px;
+    border: 1px solid #442F2F;
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+    display: inline-block;
+}
+.menu li:not(.current):hover { 
+    color: #efefef;
+    border-color: #efefef;
+}
+.menu li.current{
+    background: #EFEFEF;
+    border-color: #efefef;
+    color: black;
+}
+.contact {
+    text-align: center;
+}
+
+.sara {
+    margin: 0 auto;
+    display: block;
+    height: 250px;
+    width: 250px;
+    background: url("images/sara.jpg");
+    background-size: contain;
+    border-radius: 125px;
+}
+
+.about h4 { 
+    display:block;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    margin: 40px;
+}
+.hide{display: none}
+@media (max-width: 500px) {
+    p {
+    font-size: 17px;
+    line-height: 23px;
+    }
+    h1 {
+        font-size: 36px;
+        padding: 5px;
+    }
+    h2 {
+    font-size: 18px;
+}
+    li {
+        padding: 5px;
+        display: block;
+      }
+    .sara {
+        height: 150px;
+        width: 150px;
+        background: url("images/sara_sm.jpg");
+        border-radius: 75px;
+    }
+}
