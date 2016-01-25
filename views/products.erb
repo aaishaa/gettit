@@ -1,30 +1,48 @@
-<h1>All Products</h1>
+<h1>Product Reviews</h1>
+<% if @success %>
+  <h3><%= @success %></h3>
+<% end %>
+<% if @login_success %>
+  <h3><%= @login_success %></h3>
+<% end %>
 <table>
   <thead>
     <tr>
+      <th>id</th>
       <th>Votes</th>
       <th>Brand</th>
-      <th>Name</th>
-      <!-- <th>Description</th> -->
+      <th>Product Name</th>
       <th>Category</th>
       <th>Post Date</th>
-      <!-- <th>post id</th> -->
     </tr>
   </thead>
   <tbody>
-    <% @products_t.each do |product| %>
+    <% prod_list.each do |product| %>
       <tr data-product-id="<%= product['id'] %>">
+        <!-- <td><%= product['id'] %></td> -->
         <td class="votes" data-href="/products/<%= product['id'] %>">
-          <div class="upvote"><a href="/upvote/<%= product['id'] %>">&#11014;</a></div>
-          <div><%= product['votes']%></div>
-          <div class="downvote"><a href="/downvote/<%= product['id'] %>">&#11015;</a></div>
+          <div class="upvote">
+            <a href="/upvote/<%= product['id'] %>">&#11014;</a>
+          </div>
+          <div>
+            <%= product['votes']%>
+          </div>
+          <div class="downvote">
+            <a href="/downvote/<%= product['id'] %>">&#11015;</a>
+          </div>
+          </td>
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>">
+          <%= product['brand']%>
         </td>
-        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['brand']%></td>
-        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['name']%></td>
-        <!-- <td><%= product['dscrp']%></td> -->
-        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['title'] %></td>
-        <td class="prod-cell" data-href="/products/<%= product['id'] %>"><%= product['ptime']%></td>
-       <!--  <td><%= product['id'] %></td> -->
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>">
+          <%= product['name']%>
+        </td>
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>">
+          <%= product['title'] %>
+        </td>
+        <td class="prod-cell" data-href="/products/<%= product['id'] %>">
+          <%= product['ptime']%>
+        </td>
       </tr>
     <% end %>
   </tbody>
